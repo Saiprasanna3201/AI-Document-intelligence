@@ -66,6 +66,16 @@ Chat with Doc is a smart PDF assistant that extracts and answers user queries ba
 - "Question related to topic present in the document"
 
 ---
+##Requirements
+streamlit
+pdf2image
+pytesseract
+python-dotenv
+PyPDF2
+langchain
+langchain-google-genai
+faiss-cpu
+sentence-transformers
 
 
-Thank you for checking out Chat with Doc! 🚀
+Thank you for checking out ! 🚀
