@@ -1,4 +1,4 @@
-# AI-Document-intelligence
+
 # Chat with Doc
 
 Chat with Doc is a smart PDF assistant that extracts and answers user queries based on the content of PDF documents. It uses OCR (Optical Character Recognition) to handle image-based text, making it versatile for various document types.
