@@ -1,14 +1,23 @@
-# Use Python base image
-FROM python:3.10-slim
+from flask import Flask, request, jsonify
+import PyPDF2
 
-# Set working directory
-WORKDIR /app
+app = Flask(__name__)
 
-# Copy all files to container
-COPY . .
+@app.route("/")
+def home():
+    return "ChatWithDoc is running 🚀"
 
-# Install required packages (if any)
-RUN pip install --no-cache-dir PyPDF2 pytesseract pillow
+@app.route("/read-pdf", methods=["POST"])
+def read_pdf():
+    if 'file' not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
 
-# Run the application
-CMD ["python", "Chatwithdoc.py"]
+    pdf_file = request.files['file']
+    reader = PyPDF2.PdfReader(pdf_file)
+    text = ""
+
+    for page in reader.pages:
+        text += page.extract_text()
+
+    return jsonify({
+        "pages": len(reader.pages
