@@ -11,4 +11,4 @@ COPY . .
 RUN pip install --no-cache-dir PyPDF2 pytesseract pillow
 
 # Run the application
-CMD ["python", "chatwithdoc.py"]
+CMD ["python", "Chatwithdoc.py"]
